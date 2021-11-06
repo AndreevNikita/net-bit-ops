@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Andreev Nikita</Authors>
+    <Description>The library provides bit operations for c#.</Description>
+    <Copyright>Andreev Nikita</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/AndreevNikita/net-bit-ops</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/AndreevNikita/net-bit-ops</PackageProjectUrl>
+    <PackageTags>binary_operations bit fls ffs</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
