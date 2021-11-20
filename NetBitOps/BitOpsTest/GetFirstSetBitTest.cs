@@ -8,16 +8,13 @@ using System.Threading.Tasks;
 
 namespace BitOpsTest {
 	public class GetFirstSetBitTests {
-		[SetUp]
-		public void Setup() {
-		}
 
 		/// <summary>
 		/// All 0x80 and 0x1 (the last and the first bits of byte) combinations for each byte for 64-bit ulong type.
 		/// </summary>
 		private static IEnumerable<ulong> TestULongsSource = 
 			Enumerable.Range(0, sizeof(ulong) + 1).Reverse().SelectMany(
-				index1 => Enumerable.Range(0, sizeof(ulong) + 1).Reverse().Select(index2 => (index1 != sizeof(ulong) ? unchecked((ulong)0x80) << (index1 * 8) : 0) | (index2 != sizeof(ulong) ? unchecked((ulong)0x1) << (index2 * 8) : 0))
+				index1 => Enumerable.Range(0, sizeof(ulong) + 1).Reverse().Select(index2 => (index1 != sizeof(ulong) ? 0x80UL << (index1 * 8) : 0) | (index2 != sizeof(ulong) ? 0x1UL << (index2 * 8) : 0))
 			);
 
 		[Test]
@@ -32,7 +29,7 @@ namespace BitOpsTest {
 		/// </summary>
 		private static IEnumerable<uint> TestUIntegersSource = 
 			Enumerable.Range(0, sizeof(uint) + 1).Reverse().SelectMany(
-				index1 => Enumerable.Range(0, sizeof(uint) + 1).Reverse().Select(index2 => (index1 != sizeof(uint) ? unchecked((uint)0x80) << (index1 * 8) : 0) | (index2 != sizeof(uint) ? unchecked((uint)0x1) << (index2 * 8) : 0))
+				index1 => Enumerable.Range(0, sizeof(uint) + 1).Reverse().Select(index2 => (index1 != sizeof(uint) ? 0x80U << (index1 * 8) : 0) | (index2 != sizeof(uint) ? 0x1U << (index2 * 8) : 0))
 			);
 
 
@@ -50,7 +47,7 @@ namespace BitOpsTest {
 		/// </summary>
 		private static IEnumerable<ushort> TestUShortsSource = 
 			Enumerable.Range(0, sizeof(ushort) + 1).Reverse().SelectMany(
-				index1 => Enumerable.Range(0, sizeof(ushort) + 1).Reverse().Select(index2 => (ushort)((index1 != sizeof(ushort) ? unchecked((ushort)0x80) << (index1 * 8) : 0) | (index2 != sizeof(ushort) ? unchecked((ushort)0x1) << (index2 * 8) : 0)))
+				index1 => Enumerable.Range(0, sizeof(ushort) + 1).Reverse().Select(index2 => (ushort)((index1 != sizeof(ushort) ? 0x80U << (index1 * 8) : 0) | (index2 != sizeof(ushort) ? 0x1U << (index2 * 8) : 0)))
 			);
 
 
