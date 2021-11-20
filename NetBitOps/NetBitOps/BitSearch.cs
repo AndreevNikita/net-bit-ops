@@ -2,7 +2,7 @@
 
 namespace NetBitOps {
 	
-	public static class BitOps {
+	public static partial class BitOps {
 
 		/// <summary>
 		/// The precomputed table of the last set bit index for each byte value.
